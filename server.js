@@ -6,7 +6,7 @@ const express = require('express');
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-const conString = 'postgres://carlos:labs@localhost:5432/kilovolt';
+const conString = process.env.DATABASE_URL || 'postgres://carlos:labs@localhost:5432/kilovolt';
 // const conString = 'postgres://localhost:5432/kilovolt';
 const client = new pg.Client(conString);
 client.connect();
